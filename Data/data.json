@@ -15,6 +15,16 @@
 
 	"Jeux":
 	[
+		["Catan - jeu de base", "euh", "Incroyable jeu de production de ressources, accessible à tous. Seuls les plus grands sont capable d'apprécier sa grandeur."],
+		["Catan - extension marin", "beh", "Extension de Catan, le jeu de base, cette extension permet de partir en exploration des mers et de démultiplier les possibilité de jeu, de manière à procurer une expérience encore plus enrichissante."],
+		["Catan - extension ville et chevalier", "", "b"],
+		["Catan - extension pirates et découvreurs", "", "r"],
+		["Catan - extension barbares et marchands", "", "z"],
+		["Catan - extension légendes et dragons", "", "a"],
+		["Tome 7", "", ""],
+		["Tome 8", "", ""],
+		["Tome 9", "", ""],
+		["Tome 10", "", ""]
 	],
 
 	"Autres":
