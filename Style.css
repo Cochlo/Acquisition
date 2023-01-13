@@ -1,0 +1,44 @@
+body { /*centre et set la couleur de fond*/
+  background-color: brown;
+	text-align: center
+}
+
+.Using { /*permet de gérer l'affichage de l'ensemble du site*/
+	visibility: hidden;
+}
+
+.BlocPos { /*permet de changer l'affichage des blocs (alors séparés par des div)*/
+	display: flex;
+}
+
+.Flex { /*mets les blocs côte à côte par proportion automatique*/
+	flex: 1 1 auto;
+}
+
+.UserPos { /*dessine un triangle bleu pour l'utilisateur*/
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 15px solid blue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-9px, 95px);
+  z-index: 1;
+}
+
+.Source { /*dessine des cercles verts pour les sources*/
+  visibility: hidden;
+  font-size: 10px;
+  text-align: center;
+  width: 12px;
+  height: 12px;
+  border-radius: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-6px, 98px);
+  background: green;
+  z-index: 0;
+}

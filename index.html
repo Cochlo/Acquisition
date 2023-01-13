@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+	<head>
+		<title>
+			Possessions
+		</title>
+		<link rel="stylesheet" type="text/css" href="Style.css"/>
+		<link rel="shortcut icon" href="#"/>
+		<meta name="description" content="All possessions" />
+	</head>
+	<body>
+		<h1>Now you know what I have</h1>
+		<CategoryChoice id ="CategoryName">
+			<!-- <div class="BlocPos" w3-include-html="list.html"></div> -->
+			<script>
+				fetch("Data/data.json").then(results => results.json()).then((jsonData) => {
+				  data = jsonData;
+
+					console.log(data);
+					console.log("et bah");
+					console.log(Object.keys(data).length);
+					console.log(Object.keys(data)[1]);
+					document.dispatchEvent(new Event("dataLoaded")); 
+					var htmlButton;
+					console.log(data[1])
+					for(let i = 0; i < Object.keys(data).length; i++) {
+						htmlButton = document.createElement("input");
+						htmlButton.type = "button";
+						htmlButton.value = Object.keys(data)[i];
+						htmlButton.addEventListener("click", () => {CategoryChoose(Object.keys(data)[i]); });
+						document.getElementById("CategoryName").appendChild(htmlButton);
+					}
+				})
+			</script>
+		</CategoryChoice>
+		<Object id="Object" style="visibility: hidden; position: absolute;">
+			<ObjectsList id="ObjectsList" style="position: absolute; display: flex; flex-direction: column;">
+			</ObjectsList>
+			<ObjectImage id="ObjectImage" style="position: absolute; transform: translate(10px, -10px);">
+			</ObjectImage>
+			<Detail id="ObjectDetails" style="position: absolute; transform: translate(10px, 10px);">
+			</Detail>
+		</Object>
+		<!-- <div class="BeginButton"><BeginButton>
+ 			<button id="BeginButton" type = "submit" onclick="Display()">
+				<h4>Commencer</h4>
+			</button>
+		</BeginButton></div>
+		<div class="Using"><Using>
+			<div><Mode>
+				<input type="radio" id="withfile" name="mode" value="with" checked onclick="ModeChange(value)"/>
+				<label for="whithfile">Use File (only if you have downloaded the git repo)</label>
+				<input type="radio" id="withoutfile" name="mode" value="without" onclick="ModeChange(value)"/>
+				<label for="withoutfile">Use Provided Audio</label>
+			</Mode></div>
+			<div class="NbAudio"><NbAudio>
+				<libellé>Nombre d'audios</libellé>
+				<select onchange="NbAudios(value)">				   
+					<option value="1">1</option>
+				    <option value="2">2</option>
+				    <option value="3">3</option>
+				    <option selected="selected" value="4">4</option>
+				</select>
+			</NbAudio></div>
+			<h4>Position des audios</h4>
+			 <div class="BlocPos" w3-include-html="list.html"></div> 
+			<h4>Orientation de l'utilisateur</h4>
+			<div class="Orientation"><Orientation>
+				<libellé>Orientation</libellé>
+				<select onchange="UpdateOr(value)">				   
+					<option value="0">Avant</option>
+				    <option value="180">Arrière</option>
+				    <option value="90">Gauche</option>
+				    <option value="270">Droite</option>
+				</select>
+			</Orientation></div>
+			<div class="UserPos"></div>
+			<div><Source>
+				<div class="Source" id="src1">1</div>
+				<div class="Source" id="src2">2</div>
+				<div class="Source" id="src3">3</div>
+				<div class="Source" id="src4">4</div>
+			</Source></div>
+		</Using></div> -->
+		<div><Source>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+			<script src="Display.js"></script>
+			<!-- <script src="Sound.js"></script> -->
+			<!-- <script>includeHTML();</script> -->
+    	</Source></div>
+	</body>
+</html>
